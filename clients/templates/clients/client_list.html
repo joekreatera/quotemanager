@@ -1,0 +1,11 @@
+{% block content %}
+    <h2> Clients: </h2>
+
+    <ul>
+        {% for client in clients %}
+            {% url 'detail' client.id as client_url %}
+            <li><a href="{{client_url}}"> {{client.name}} </a> </li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
