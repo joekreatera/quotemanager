@@ -4,7 +4,7 @@ from django.views import View
 
 
 
-def WelcomeView(View):
+class WelcomeView(View):
 
     def get(self, request):
         return render(request, 'welcome.html')
