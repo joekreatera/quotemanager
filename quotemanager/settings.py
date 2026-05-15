@@ -35,10 +35,12 @@ INSTALLED_APPS = [
     'items',
     'quotes',
     'generals',
+    'django.contrib.auth',
     'rest_framework',
     'drf_spectacular',
+    'rest_framework.authtoken',
+    'djoser',
     'django.contrib.admin',
-    'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
@@ -132,6 +134,9 @@ STATIC_URL = 'static/'
 REST_FRAMEWORK = {
     # YOUR SETTINGS
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    ),
 }
 
 SPECTACULAR_SETTINGS = {
